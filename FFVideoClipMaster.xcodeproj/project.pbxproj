@@ -1,0 +1,689 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		504D0ACC1DD8AADB001725AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0ACB1DD8AADB001725AC /* main.m */; };
+		504D0ACF1DD8AADB001725AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0ACE1DD8AADB001725AC /* AppDelegate.m */; };
+		504D0AD71DD8AADB001725AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504D0AD61DD8AADB001725AC /* Assets.xcassets */; };
+		504D0ADA1DD8AADB001725AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504D0AD81DD8AADB001725AC /* LaunchScreen.storyboard */; };
+		504D0AE51DD8AADB001725AC /* FFVideoClipMasterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0AE41DD8AADB001725AC /* FFVideoClipMasterTests.m */; };
+		504D0AF01DD8AADB001725AC /* FFVideoClipMasterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0AEF1DD8AADB001725AC /* FFVideoClipMasterUITests.m */; };
+		504D0B101DD8AC4C001725AC /* FFVideoChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0B0E1DD8AC4C001725AC /* FFVideoChooseViewController.m */; };
+		504D0B111DD8AC4C001725AC /* FFVideoChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504D0B0F1DD8AC4C001725AC /* FFVideoChooseViewController.xib */; };
+		504D0B151DD8AC5F001725AC /* FFVideoClipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0B131DD8AC5F001725AC /* FFVideoClipViewController.m */; };
+		504D0B161DD8AC5F001725AC /* FFVideoClipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504D0B141DD8AC5F001725AC /* FFVideoClipViewController.xib */; };
+		504D0B1A1DD8AC7D001725AC /* FFVideoSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0B181DD8AC7D001725AC /* FFVideoSaveViewController.m */; };
+		504D0B1B1DD8AC7D001725AC /* FFVideoSaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504D0B191DD8AC7D001725AC /* FFVideoSaveViewController.xib */; };
+		504D0B1F1DD8AC97001725AC /* FFVideoSizeHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0B1D1DD8AC97001725AC /* FFVideoSizeHandleViewController.m */; };
+		504D0B201DD8AC97001725AC /* FFVideoSizeHandleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504D0B1E1DD8AC97001725AC /* FFVideoSizeHandleViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		504D0AE11DD8AADB001725AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 504D0ABF1DD8AADB001725AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 504D0AC61DD8AADB001725AC;
+			remoteInfo = FFVideoClipMaster;
+		};
+		504D0AEC1DD8AADB001725AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 504D0ABF1DD8AADB001725AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 504D0AC61DD8AADB001725AC;
+			remoteInfo = FFVideoClipMaster;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		504D0AC71DD8AADB001725AC /* FFVideoClipMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFVideoClipMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		504D0ACB1DD8AADB001725AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		504D0ACD1DD8AADB001725AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		504D0ACE1DD8AADB001725AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		504D0AD61DD8AADB001725AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		504D0AD91DD8AADB001725AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		504D0ADB1DD8AADB001725AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		504D0AE01DD8AADB001725AC /* FFVideoClipMasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFVideoClipMasterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		504D0AE41DD8AADB001725AC /* FFVideoClipMasterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFVideoClipMasterTests.m; sourceTree = "<group>"; };
+		504D0AE61DD8AADB001725AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		504D0AEB1DD8AADB001725AC /* FFVideoClipMasterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFVideoClipMasterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		504D0AEF1DD8AADB001725AC /* FFVideoClipMasterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFVideoClipMasterUITests.m; sourceTree = "<group>"; };
+		504D0AF11DD8AADB001725AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		504D0B0D1DD8AC4C001725AC /* FFVideoChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFVideoChooseViewController.h; sourceTree = "<group>"; };
+		504D0B0E1DD8AC4C001725AC /* FFVideoChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFVideoChooseViewController.m; sourceTree = "<group>"; };
+		504D0B0F1DD8AC4C001725AC /* FFVideoChooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFVideoChooseViewController.xib; sourceTree = "<group>"; };
+		504D0B121DD8AC5F001725AC /* FFVideoClipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFVideoClipViewController.h; sourceTree = "<group>"; };
+		504D0B131DD8AC5F001725AC /* FFVideoClipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFVideoClipViewController.m; sourceTree = "<group>"; };
+		504D0B141DD8AC5F001725AC /* FFVideoClipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFVideoClipViewController.xib; sourceTree = "<group>"; };
+		504D0B171DD8AC7D001725AC /* FFVideoSaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFVideoSaveViewController.h; sourceTree = "<group>"; };
+		504D0B181DD8AC7D001725AC /* FFVideoSaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFVideoSaveViewController.m; sourceTree = "<group>"; };
+		504D0B191DD8AC7D001725AC /* FFVideoSaveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFVideoSaveViewController.xib; sourceTree = "<group>"; };
+		504D0B1C1DD8AC97001725AC /* FFVideoSizeHandleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFVideoSizeHandleViewController.h; sourceTree = "<group>"; };
+		504D0B1D1DD8AC97001725AC /* FFVideoSizeHandleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFVideoSizeHandleViewController.m; sourceTree = "<group>"; };
+		504D0B1E1DD8AC97001725AC /* FFVideoSizeHandleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFVideoSizeHandleViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		504D0AC41DD8AADB001725AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504D0ADD1DD8AADB001725AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504D0AE81DD8AADB001725AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		504D0ABE1DD8AADB001725AC = {
+			isa = PBXGroup;
+			children = (
+				504D0AC91DD8AADB001725AC /* FFVideoClipMaster */,
+				504D0AE31DD8AADB001725AC /* FFVideoClipMasterTests */,
+				504D0AEE1DD8AADB001725AC /* FFVideoClipMasterUITests */,
+				504D0AC81DD8AADB001725AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		504D0AC81DD8AADB001725AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				504D0AC71DD8AADB001725AC /* FFVideoClipMaster.app */,
+				504D0AE01DD8AADB001725AC /* FFVideoClipMasterTests.xctest */,
+				504D0AEB1DD8AADB001725AC /* FFVideoClipMasterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		504D0AC91DD8AADB001725AC /* FFVideoClipMaster */ = {
+			isa = PBXGroup;
+			children = (
+				504D0B0C1DD8AC12001725AC /* Tool */,
+				504D0AFD1DD8AB85001725AC /* Controller */,
+				504D0AFE1DD8AB85001725AC /* Model */,
+				504D0AFF1DD8AB85001725AC /* View */,
+				504D0ACD1DD8AADB001725AC /* AppDelegate.h */,
+				504D0ACE1DD8AADB001725AC /* AppDelegate.m */,
+				504D0AD61DD8AADB001725AC /* Assets.xcassets */,
+				504D0AD81DD8AADB001725AC /* LaunchScreen.storyboard */,
+				504D0ADB1DD8AADB001725AC /* Info.plist */,
+				504D0ACA1DD8AADB001725AC /* Supporting Files */,
+			);
+			path = FFVideoClipMaster;
+			sourceTree = "<group>";
+		};
+		504D0ACA1DD8AADB001725AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				504D0ACB1DD8AADB001725AC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		504D0AE31DD8AADB001725AC /* FFVideoClipMasterTests */ = {
+			isa = PBXGroup;
+			children = (
+				504D0AE41DD8AADB001725AC /* FFVideoClipMasterTests.m */,
+				504D0AE61DD8AADB001725AC /* Info.plist */,
+			);
+			path = FFVideoClipMasterTests;
+			sourceTree = "<group>";
+		};
+		504D0AEE1DD8AADB001725AC /* FFVideoClipMasterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				504D0AEF1DD8AADB001725AC /* FFVideoClipMasterUITests.m */,
+				504D0AF11DD8AADB001725AC /* Info.plist */,
+			);
+			path = FFVideoClipMasterUITests;
+			sourceTree = "<group>";
+		};
+		504D0AFD1DD8AB85001725AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				504D0B001DD8ABF1001725AC /* VideoChooseVC */,
+				504D0B011DD8ABF1001725AC /* VideoClipVC */,
+				504D0B021DD8ABF1001725AC /* VideoSaveVC */,
+				504D0B031DD8ABF1001725AC /* VideoSizeHandleVC */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		504D0AFE1DD8AB85001725AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				504D0B041DD8ABF8001725AC /* VideoChooseVC */,
+				504D0B051DD8ABF8001725AC /* VideoClipVC */,
+				504D0B061DD8ABF8001725AC /* VideoSaveVC */,
+				504D0B071DD8ABF8001725AC /* VideoSizeHandleVC */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		504D0AFF1DD8AB85001725AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				504D0B081DD8ABFC001725AC /* VideoChooseVC */,
+				504D0B091DD8ABFC001725AC /* VideoClipVC */,
+				504D0B0A1DD8ABFC001725AC /* VideoSaveVC */,
+				504D0B0B1DD8ABFC001725AC /* VideoSizeHandleVC */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		504D0B001DD8ABF1001725AC /* VideoChooseVC */ = {
+			isa = PBXGroup;
+			children = (
+				504D0B0D1DD8AC4C001725AC /* FFVideoChooseViewController.h */,
+				504D0B0E1DD8AC4C001725AC /* FFVideoChooseViewController.m */,
+				504D0B0F1DD8AC4C001725AC /* FFVideoChooseViewController.xib */,
+			);
+			path = VideoChooseVC;
+			sourceTree = "<group>";
+		};
+		504D0B011DD8ABF1001725AC /* VideoClipVC */ = {
+			isa = PBXGroup;
+			children = (
+				504D0B121DD8AC5F001725AC /* FFVideoClipViewController.h */,
+				504D0B131DD8AC5F001725AC /* FFVideoClipViewController.m */,
+				504D0B141DD8AC5F001725AC /* FFVideoClipViewController.xib */,
+			);
+			path = VideoClipVC;
+			sourceTree = "<group>";
+		};
+		504D0B021DD8ABF1001725AC /* VideoSaveVC */ = {
+			isa = PBXGroup;
+			children = (
+				504D0B171DD8AC7D001725AC /* FFVideoSaveViewController.h */,
+				504D0B181DD8AC7D001725AC /* FFVideoSaveViewController.m */,
+				504D0B191DD8AC7D001725AC /* FFVideoSaveViewController.xib */,
+			);
+			path = VideoSaveVC;
+			sourceTree = "<group>";
+		};
+		504D0B031DD8ABF1001725AC /* VideoSizeHandleVC */ = {
+			isa = PBXGroup;
+			children = (
+				504D0B1C1DD8AC97001725AC /* FFVideoSizeHandleViewController.h */,
+				504D0B1D1DD8AC97001725AC /* FFVideoSizeHandleViewController.m */,
+				504D0B1E1DD8AC97001725AC /* FFVideoSizeHandleViewController.xib */,
+			);
+			path = VideoSizeHandleVC;
+			sourceTree = "<group>";
+		};
+		504D0B041DD8ABF8001725AC /* VideoChooseVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VideoChooseVC;
+			sourceTree = "<group>";
+		};
+		504D0B051DD8ABF8001725AC /* VideoClipVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VideoClipVC;
+			sourceTree = "<group>";
+		};
+		504D0B061DD8ABF8001725AC /* VideoSaveVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VideoSaveVC;
+			sourceTree = "<group>";
+		};
+		504D0B071DD8ABF8001725AC /* VideoSizeHandleVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VideoSizeHandleVC;
+			sourceTree = "<group>";
+		};
+		504D0B081DD8ABFC001725AC /* VideoChooseVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VideoChooseVC;
+			sourceTree = "<group>";
+		};
+		504D0B091DD8ABFC001725AC /* VideoClipVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VideoClipVC;
+			sourceTree = "<group>";
+		};
+		504D0B0A1DD8ABFC001725AC /* VideoSaveVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VideoSaveVC;
+			sourceTree = "<group>";
+		};
+		504D0B0B1DD8ABFC001725AC /* VideoSizeHandleVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VideoSizeHandleVC;
+			sourceTree = "<group>";
+		};
+		504D0B0C1DD8AC12001725AC /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		504D0AC61DD8AADB001725AC /* FFVideoClipMaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 504D0AF41DD8AADB001725AC /* Build configuration list for PBXNativeTarget "FFVideoClipMaster" */;
+			buildPhases = (
+				504D0AC31DD8AADB001725AC /* Sources */,
+				504D0AC41DD8AADB001725AC /* Frameworks */,
+				504D0AC51DD8AADB001725AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FFVideoClipMaster;
+			productName = FFVideoClipMaster;
+			productReference = 504D0AC71DD8AADB001725AC /* FFVideoClipMaster.app */;
+			productType = "com.apple.product-type.application";
+		};
+		504D0ADF1DD8AADB001725AC /* FFVideoClipMasterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 504D0AF71DD8AADB001725AC /* Build configuration list for PBXNativeTarget "FFVideoClipMasterTests" */;
+			buildPhases = (
+				504D0ADC1DD8AADB001725AC /* Sources */,
+				504D0ADD1DD8AADB001725AC /* Frameworks */,
+				504D0ADE1DD8AADB001725AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				504D0AE21DD8AADB001725AC /* PBXTargetDependency */,
+			);
+			name = FFVideoClipMasterTests;
+			productName = FFVideoClipMasterTests;
+			productReference = 504D0AE01DD8AADB001725AC /* FFVideoClipMasterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		504D0AEA1DD8AADB001725AC /* FFVideoClipMasterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 504D0AFA1DD8AADB001725AC /* Build configuration list for PBXNativeTarget "FFVideoClipMasterUITests" */;
+			buildPhases = (
+				504D0AE71DD8AADB001725AC /* Sources */,
+				504D0AE81DD8AADB001725AC /* Frameworks */,
+				504D0AE91DD8AADB001725AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				504D0AED1DD8AADB001725AC /* PBXTargetDependency */,
+			);
+			name = FFVideoClipMasterUITests;
+			productName = FFVideoClipMasterUITests;
+			productReference = 504D0AEB1DD8AADB001725AC /* FFVideoClipMasterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		504D0ABF1DD8AADB001725AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FF;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Mr.Yao;
+				TargetAttributes = {
+					504D0AC61DD8AADB001725AC = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = E854VUQ68Z;
+						ProvisioningStyle = Automatic;
+					};
+					504D0ADF1DD8AADB001725AC = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 504D0AC61DD8AADB001725AC;
+					};
+					504D0AEA1DD8AADB001725AC = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 504D0AC61DD8AADB001725AC;
+					};
+				};
+			};
+			buildConfigurationList = 504D0AC21DD8AADB001725AC /* Build configuration list for PBXProject "FFVideoClipMaster" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 504D0ABE1DD8AADB001725AC;
+			productRefGroup = 504D0AC81DD8AADB001725AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				504D0AC61DD8AADB001725AC /* FFVideoClipMaster */,
+				504D0ADF1DD8AADB001725AC /* FFVideoClipMasterTests */,
+				504D0AEA1DD8AADB001725AC /* FFVideoClipMasterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		504D0AC51DD8AADB001725AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504D0B161DD8AC5F001725AC /* FFVideoClipViewController.xib in Resources */,
+				504D0B1B1DD8AC7D001725AC /* FFVideoSaveViewController.xib in Resources */,
+				504D0ADA1DD8AADB001725AC /* LaunchScreen.storyboard in Resources */,
+				504D0B111DD8AC4C001725AC /* FFVideoChooseViewController.xib in Resources */,
+				504D0AD71DD8AADB001725AC /* Assets.xcassets in Resources */,
+				504D0B201DD8AC97001725AC /* FFVideoSizeHandleViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504D0ADE1DD8AADB001725AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504D0AE91DD8AADB001725AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		504D0AC31DD8AADB001725AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504D0B1A1DD8AC7D001725AC /* FFVideoSaveViewController.m in Sources */,
+				504D0B151DD8AC5F001725AC /* FFVideoClipViewController.m in Sources */,
+				504D0ACF1DD8AADB001725AC /* AppDelegate.m in Sources */,
+				504D0ACC1DD8AADB001725AC /* main.m in Sources */,
+				504D0B101DD8AC4C001725AC /* FFVideoChooseViewController.m in Sources */,
+				504D0B1F1DD8AC97001725AC /* FFVideoSizeHandleViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504D0ADC1DD8AADB001725AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504D0AE51DD8AADB001725AC /* FFVideoClipMasterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504D0AE71DD8AADB001725AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504D0AF01DD8AADB001725AC /* FFVideoClipMasterUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		504D0AE21DD8AADB001725AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 504D0AC61DD8AADB001725AC /* FFVideoClipMaster */;
+			targetProxy = 504D0AE11DD8AADB001725AC /* PBXContainerItemProxy */;
+		};
+		504D0AED1DD8AADB001725AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 504D0AC61DD8AADB001725AC /* FFVideoClipMaster */;
+			targetProxy = 504D0AEC1DD8AADB001725AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		504D0AD81DD8AADB001725AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				504D0AD91DD8AADB001725AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		504D0AF21DD8AADB001725AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		504D0AF31DD8AADB001725AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		504D0AF51DD8AADB001725AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = E854VUQ68Z;
+				INFOPLIST_FILE = FFVideoClipMaster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FF.FFVideoClipMaster;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		504D0AF61DD8AADB001725AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = E854VUQ68Z;
+				INFOPLIST_FILE = FFVideoClipMaster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FF.FFVideoClipMaster;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		504D0AF81DD8AADB001725AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FFVideoClipMasterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FF.FFVideoClipMasterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FFVideoClipMaster.app/FFVideoClipMaster";
+			};
+			name = Debug;
+		};
+		504D0AF91DD8AADB001725AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FFVideoClipMasterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FF.FFVideoClipMasterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FFVideoClipMaster.app/FFVideoClipMaster";
+			};
+			name = Release;
+		};
+		504D0AFB1DD8AADB001725AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FFVideoClipMasterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FF.FFVideoClipMasterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FFVideoClipMaster;
+			};
+			name = Debug;
+		};
+		504D0AFC1DD8AADB001725AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FFVideoClipMasterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FF.FFVideoClipMasterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FFVideoClipMaster;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		504D0AC21DD8AADB001725AC /* Build configuration list for PBXProject "FFVideoClipMaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				504D0AF21DD8AADB001725AC /* Debug */,
+				504D0AF31DD8AADB001725AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		504D0AF41DD8AADB001725AC /* Build configuration list for PBXNativeTarget "FFVideoClipMaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				504D0AF51DD8AADB001725AC /* Debug */,
+				504D0AF61DD8AADB001725AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		504D0AF71DD8AADB001725AC /* Build configuration list for PBXNativeTarget "FFVideoClipMasterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				504D0AF81DD8AADB001725AC /* Debug */,
+				504D0AF91DD8AADB001725AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		504D0AFA1DD8AADB001725AC /* Build configuration list for PBXNativeTarget "FFVideoClipMasterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				504D0AFB1DD8AADB001725AC /* Debug */,
+				504D0AFC1DD8AADB001725AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 504D0ABF1DD8AADB001725AC /* Project object */;
+}
