@@ -11,8 +11,6 @@
 		504D0ACF1DD8AADB001725AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0ACE1DD8AADB001725AC /* AppDelegate.m */; };
 		504D0AD71DD8AADB001725AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504D0AD61DD8AADB001725AC /* Assets.xcassets */; };
 		504D0ADA1DD8AADB001725AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504D0AD81DD8AADB001725AC /* LaunchScreen.storyboard */; };
-		504D0AE51DD8AADB001725AC /* FFVideoClipMasterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0AE41DD8AADB001725AC /* FFVideoClipMasterTests.m */; };
-		504D0AF01DD8AADB001725AC /* FFVideoClipMasterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0AEF1DD8AADB001725AC /* FFVideoClipMasterUITests.m */; };
 		504D0B101DD8AC4C001725AC /* FFVideoChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0B0E1DD8AC4C001725AC /* FFVideoChooseViewController.m */; };
 		504D0B111DD8AC4C001725AC /* FFVideoChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504D0B0F1DD8AC4C001725AC /* FFVideoChooseViewController.xib */; };
 		504D0B151DD8AC5F001725AC /* FFVideoClipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0B131DD8AC5F001725AC /* FFVideoClipViewController.m */; };
@@ -22,6 +20,7 @@
 		504D0B1F1DD8AC97001725AC /* FFVideoSizeHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504D0B1D1DD8AC97001725AC /* FFVideoSizeHandleViewController.m */; };
 		504D0B201DD8AC97001725AC /* FFVideoSizeHandleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504D0B1E1DD8AC97001725AC /* FFVideoSizeHandleViewController.xib */; };
 		5087047F1DD8B721002F8BEA /* FFNavItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5087047E1DD8B721002F8BEA /* FFNavItem.m */; };
+		508704881DD9AC53002F8BEA /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 508704871DD9AC53002F8BEA /* UIColor+Category.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +49,7 @@
 		504D0AD91DD8AADB001725AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		504D0ADB1DD8AADB001725AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		504D0AE01DD8AADB001725AC /* FFVideoClipMasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFVideoClipMasterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		504D0AE41DD8AADB001725AC /* FFVideoClipMasterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFVideoClipMasterTests.m; sourceTree = "<group>"; };
-		504D0AE61DD8AADB001725AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		504D0AEB1DD8AADB001725AC /* FFVideoClipMasterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFVideoClipMasterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		504D0AEF1DD8AADB001725AC /* FFVideoClipMasterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFVideoClipMasterUITests.m; sourceTree = "<group>"; };
-		504D0AF11DD8AADB001725AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		504D0B0D1DD8AC4C001725AC /* FFVideoChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFVideoChooseViewController.h; sourceTree = "<group>"; };
 		504D0B0E1DD8AC4C001725AC /* FFVideoChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFVideoChooseViewController.m; sourceTree = "<group>"; };
 		504D0B0F1DD8AC4C001725AC /* FFVideoChooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFVideoChooseViewController.xib; sourceTree = "<group>"; };
@@ -70,6 +65,8 @@
 		5087047D1DD8B721002F8BEA /* FFNavItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFNavItem.h; sourceTree = "<group>"; };
 		5087047E1DD8B721002F8BEA /* FFNavItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFNavItem.m; sourceTree = "<group>"; };
 		508704811DD8B7EF002F8BEA /* FFVideoClipMasterPCH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFVideoClipMasterPCH.h; sourceTree = "<group>"; };
+		508704861DD9AC53002F8BEA /* UIColor+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
+		508704871DD9AC53002F8BEA /* UIColor+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				504D0AC91DD8AADB001725AC /* FFVideoClipMaster */,
-				504D0AE31DD8AADB001725AC /* FFVideoClipMasterTests */,
-				504D0AEE1DD8AADB001725AC /* FFVideoClipMasterUITests */,
 				504D0AC81DD8AADB001725AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,24 +136,6 @@
 				504D0ACB1DD8AADB001725AC /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		504D0AE31DD8AADB001725AC /* FFVideoClipMasterTests */ = {
-			isa = PBXGroup;
-			children = (
-				504D0AE41DD8AADB001725AC /* FFVideoClipMasterTests.m */,
-				504D0AE61DD8AADB001725AC /* Info.plist */,
-			);
-			path = FFVideoClipMasterTests;
-			sourceTree = "<group>";
-		};
-		504D0AEE1DD8AADB001725AC /* FFVideoClipMasterUITests */ = {
-			isa = PBXGroup;
-			children = (
-				504D0AEF1DD8AADB001725AC /* FFVideoClipMasterUITests.m */,
-				504D0AF11DD8AADB001725AC /* Info.plist */,
-			);
-			path = FFVideoClipMasterUITests;
 			sourceTree = "<group>";
 		};
 		504D0AFD1DD8AB85001725AC /* Controller */ = {
@@ -311,6 +288,8 @@
 		508704821DD8BA04002F8BEA /* CateGory */ = {
 			isa = PBXGroup;
 			children = (
+				508704861DD9AC53002F8BEA /* UIColor+Category.h */,
+				508704871DD9AC53002F8BEA /* UIColor+Category.m */,
 			);
 			path = CateGory;
 			sourceTree = "<group>";
@@ -456,6 +435,7 @@
 				504D0B1A1DD8AC7D001725AC /* FFVideoSaveViewController.m in Sources */,
 				504D0B151DD8AC5F001725AC /* FFVideoClipViewController.m in Sources */,
 				504D0ACF1DD8AADB001725AC /* AppDelegate.m in Sources */,
+				508704881DD9AC53002F8BEA /* UIColor+Category.m in Sources */,
 				504D0ACC1DD8AADB001725AC /* main.m in Sources */,
 				5087047F1DD8B721002F8BEA /* FFNavItem.m in Sources */,
 				504D0B101DD8AC4C001725AC /* FFVideoChooseViewController.m in Sources */,
@@ -467,7 +447,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				504D0AE51DD8AADB001725AC /* FFVideoClipMasterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +454,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				504D0AF01DD8AADB001725AC /* FFVideoClipMasterUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
