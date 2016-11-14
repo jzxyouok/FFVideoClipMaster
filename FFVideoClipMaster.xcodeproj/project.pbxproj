@@ -35,6 +35,7 @@
 		508704BA1DD9F1B6002F8BEA /* LSYAssetPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 508704AD1DD9F1B6002F8BEA /* LSYAssetPreview.m */; };
 		508704BB1DD9F1B6002F8BEA /* LSYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508704AF1DD9F1B6002F8BEA /* LSYNavigationController.m */; };
 		508704BD1DD9F417002F8BEA /* AlbumPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 508704BC1DD9F417002F8BEA /* AlbumPicker.bundle */; };
+		508704C01DD9F86D002F8BEA /* FFRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508704BF1DD9F86D002F8BEA /* FFRootView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		508704AE1DD9F1B6002F8BEA /* LSYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYNavigationController.h; sourceTree = "<group>"; };
 		508704AF1DD9F1B6002F8BEA /* LSYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYNavigationController.m; sourceTree = "<group>"; };
 		508704BC1DD9F417002F8BEA /* AlbumPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlbumPicker.bundle; sourceTree = "<group>"; };
+		508704BE1DD9F86D002F8BEA /* FFRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRootView.h; sourceTree = "<group>"; };
+		508704BF1DD9F86D002F8BEA /* FFRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRootView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +290,8 @@
 		504D0B081DD8ABFC001725AC /* VideoChooseVC */ = {
 			isa = PBXGroup;
 			children = (
+				508704BE1DD9F86D002F8BEA /* FFRootView.h */,
+				508704BF1DD9F86D002F8BEA /* FFRootView.m */,
 			);
 			path = VideoChooseVC;
 			sourceTree = "<group>";
@@ -561,6 +566,7 @@
 				508704B61DD9F1B6002F8BEA /* LSYAssetPreviewView.m in Sources */,
 				508704B71DD9F1B6002F8BEA /* LSYPickerButtomView.m in Sources */,
 				504D0ACC1DD8AADB001725AC /* main.m in Sources */,
+				508704C01DD9F86D002F8BEA /* FFRootView.m in Sources */,
 				508704B51DD9F1B6002F8BEA /* LSYAssetPreviewItem.m in Sources */,
 				508704BB1DD9F1B6002F8BEA /* LSYNavigationController.m in Sources */,
 				5087047F1DD8B721002F8BEA /* FFNavItem.m in Sources */,
