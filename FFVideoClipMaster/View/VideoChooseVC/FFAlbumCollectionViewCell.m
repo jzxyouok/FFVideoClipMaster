@@ -1,20 +1,24 @@
 //
-//  LSYAlbumCell.m
-//  AlbumPicker
+//  FFAlbumCollectionViewCell.m
+//  FFVideoClipMaster
 //
-//  Created by okwei on 15/7/24.
-//  Copyright (c) 2015年 okwei. All rights reserved.
+//  Created by Mr.Yao on 16/11/15.
+//  Copyright © 2016年 Mr.Yao. All rights reserved.
 //
 
-#import "LSYAlbumCell.h"
-@interface LSYAlbumCell ()
+#import "FFAlbumCollectionViewCell.h"
+
+@interface FFAlbumCollectionViewCell()
+
 @property (nonatomic,strong) UIImageView *imageView;
 @property (nonatomic,strong) UIImageView *statusView;
-@property (nonatomic,strong) LSYAlbumCellBottomView *bottomView;
+@property (nonatomic,strong) FFAlbumCellBottomView *bottomView;
+
 @end
-@implementation LSYAlbumCell
--(instancetype)initWithFrame:(CGRect)frame
-{
+
+@implementation FFAlbumCollectionViewCell
+
+-(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         [self.contentView addSubview:self.imageView];
@@ -23,31 +27,31 @@
     }
     return self;
 }
--(UIImageView *)imageView
-{
+
+-(UIImageView *)imageView{
     if (!_imageView) {
         _imageView = [[UIImageView alloc] init];
     }
     return _imageView;
 }
--(UIImageView *)statusView
-{
+
+-(UIImageView *)statusView{
     if (!_statusView) {
         _statusView = [[UIImageView alloc] init];
         [_statusView setImage:[UIImage imageNamed:@"AlbumPicker.bundle/CardPack_Add_UnSelected@2x"]];
     }
     return _statusView;
 }
--(LSYAlbumCellBottomView *)bottomView
-{
+
+-(FFAlbumCellBottomView *)bottomView{
     if (!_bottomView) {
-        _bottomView = [[LSYAlbumCellBottomView alloc] init];
+        _bottomView = [[FFAlbumCellBottomView alloc] init];
         [_bottomView setBackgroundColor:[UIColor colorWithRed:19/255.0 green:19/255.0 blue:19/255.0 alpha:0.75]];
     }
     return _bottomView;
 }
--(void)setModel:(LSYAlbumModel *)model
-{
+
+-(void)setModel:(FFAlbumModel *)model{
     _model = model;
     if ([model.assetType isEqual:ALAssetTypeVideo]) {
         [self.bottomView setHidden:NO];
@@ -59,8 +63,8 @@
     }
     _imageView.image = [UIImage imageWithCGImage:model.asset.thumbnail];
 }
--(void)setSelected:(BOOL)selected
-{
+
+-(void)setSelected:(BOOL)selected{
     [super setSelected:selected];
     _model.isSelect = selected;
     if (selected) {
@@ -85,45 +89,48 @@
     }
     
 }
--(void)layoutSubviews
-{
+-(void)layoutSubviews{
     [super layoutSubviews];
     self.imageView.frame = CGRectMake(0, 0, ViewSize(self).width, ViewSize(self).height);
     self.statusView.frame = CGRectMake(ViewSize(self).width-30, 0, 30, 30);
     self.bottomView.frame = CGRectMake(0, ViewSize(self).height-20, ViewSize(self).width, 20);
 }
+
 @end
-/**
- Video Tag
- */
-@interface LSYAlbumCellBottomView ()
+
+// -------------------------------------------------------------------------
+
+@interface FFAlbumCellBottomView ()
+
 @property (nonatomic,strong) UIImageView *videoImage;
 @property (nonatomic,strong) UILabel *videoTime;
+
 @end
-@implementation LSYAlbumCellBottomView
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+
+@implementation FFAlbumCellBottomView
+
+- (instancetype)initWithCoder:(NSCoder *)coder{
     self = [super initWithCoder:coder];
     if (self) {
         [self initBottomView];
     }
     return self;
 }
--(instancetype)initWithFrame:(CGRect)frame
-{
+
+-(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         [self initBottomView];
     }
     return self;
 }
--(void)initBottomView
-{
+
+-(void)initBottomView{
     [self addSubview:self.videoImage];
     [self addSubview:self.videoTime];
 }
--(UILabel *)videoTime
-{
+
+-(UILabel *)videoTime{
     if (!_videoTime) {
         _videoTime = [[UILabel alloc] init];
         [_videoTime setFont:[UIFont systemFontOfSize:14.0]];
@@ -132,15 +139,15 @@
     }
     return _videoTime;
 }
--(UIImageView *)videoImage
-{
+
+-(UIImageView *)videoImage{
     if (!_videoImage) {
         _videoImage = [[UIImageView alloc] init];
     }
     return _videoImage;
 }
--(void)setInterval:(double)interval
-{
+
+-(void)setInterval:(double)interval{
     int hour;
     int minute;
     int second;
@@ -154,10 +161,12 @@
         self.videoTime.text = [NSString stringWithFormat:@"%02d:%02d",minute,second];
     }
 }
+
 -(void)layoutSubviews
 {
     [super layoutSubviews];
     [self.videoImage setFrame:CGRectMake(0,0,20, ViewSize(self).height)];
     [self.videoTime setFrame:CGRectMake(ViewOrigin(self.videoImage).x+ViewSize(self.videoImage).width, 0,ViewSize(self).width-ViewSize(self.videoImage).width-5, ViewSize(self).height)];
 }
+
 @end

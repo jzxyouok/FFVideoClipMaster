@@ -1,18 +1,22 @@
 //
-//  LSYAlbumModel.h
-//  AlbumPicker
+//  FFAlbumModel.h
+//  FFVideoClipMaster
 //
-//  Created by Labanotation on 15/8/1.
-//  Copyright (c) 2015年 okwei. All rights reserved.
+//  Created by Mr.Yao on 16/11/15.
+//  Copyright © 2016年 Mr.Yao. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface LSYAlbumModel : NSObject
+@interface FFAlbumModel : NSObject
+
 @property (nonatomic,strong) ALAsset *asset;
 @property (nonatomic,strong) NSIndexPath *indexPath;
 @property (nonatomic,strong,readonly) NSString *assetType;
 @property (nonatomic) BOOL isSelect;
+
 +(instancetype)AlbumModel:(ALAsset *)asset;
+
 -(instancetype)initAlbumModel:(ALAsset *)asset;
+
 @end

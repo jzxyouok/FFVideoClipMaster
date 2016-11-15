@@ -7,85 +7,122 @@
 //
 
 #import "FFVideoChooseViewController.h"
-#import "LSYNavigationController.h"
-#import "LSYAlbumCatalog.h"
 
-#import <MediaPlayer/MediaPlayer.h>
-#import <AVKit/AVKit.h>
-#import <AVFoundation/AVFoundation.h>
+#import "FFAlbumCollectionViewCell.h"
 
-#define SystemVersion [[UIDevice currentDevice].systemVersion floatValue]
+#import "FFAlbum.h"
 
+@interface FFVideoChooseViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@interface FFVideoChooseViewController ()<LSYAlbumCatalogDelegate>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSURL * url;
+
+@property (nonatomic, strong) NSMutableArray * albumDataArray;
+
 @end
 
 @implementation FFVideoChooseViewController
 
+#pragma mark - Lift Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-}
-
--(void)AlbumDidFinishPick:(NSArray *)assets{
+    [self setupViews];
     
-    for (ALAsset *asset in assets) {
-        if ([[asset valueForProperty:@"ALAssetPropertyType"] isEqual:@"ALAssetTypePhoto"]) {
-          //  UIImage * img = [UIImage imageWithCGImage:asset.defaultRepresentation.fullResolutionImage];
-            
-        }
-        else if ([[asset valueForProperty:@"ALAssetPropertyType"] isEqual:@"ALAssetTypeVideo"]){
-            NSURL *url = asset.defaultRepresentation.url;
-            self.url = url;
-        }
-    }
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    if (self.url) {
-        [self vipPlayerViewViewControllerWithVideoUrl:self.url];
-        self.url = nil;
-    }
-}
-
-
-- (void)vipPlayerViewViewControllerWithVideoUrl:(NSURL *)urlString {
-    if (SystemVersion >= 9.0) {
-        AVPlayerViewController *playerVC = [[AVPlayerViewController alloc] init];
-        AVPlayerItem *item = [AVPlayerItem playerItemWithURL:urlString];
-        playerVC.player = [AVPlayer playerWithPlayerItem:item];
-        [self presentViewController:playerVC
-                                                               animated:YES
-                                                             completion:^{
-                                                                 [playerVC.player play];
-                                                             }];
-    } else {
-        MPMoviePlayerViewController *moviePlayerVC = [[MPMoviePlayerViewController alloc] initWithContentURL:urlString];
-        [self presentViewController:moviePlayerVC
-                                                               animated:YES
-                                                             completion:^{
-                                                                 [moviePlayerVC.moviePlayer play];
-                                                             }];
-    }
-}
-
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    LSYAlbumCatalog *albumCatalog = [[LSYAlbumCatalog alloc] init];
+-(void)setupViews{
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.itemSize = kThumbnailSize;
+    flowLayout.sectionInset = UIEdgeInsetsMake(5,5,5, 5);
+    flowLayout.minimumInteritemSpacing = 5;
+    flowLayout.minimumLineSpacing = 5;
     
-    albumCatalog.delegate = self;
+    self.collectionView.collectionViewLayout = flowLayout;
+    self.collectionView.allowsMultipleSelection = YES;
     
-    LSYNavigationController *navigation = [[LSYNavigationController alloc] initWithRootViewController:albumCatalog];
-    albumCatalog.maximumNumberOfSelectionVideo = 1;
-    [self presentViewController:navigation animated:YES completion:^{
-        
+    self.collectionView.delegate = self;
+    
+    self.collectionView.dataSource = self;
+   
+    self.collectionView.alwaysBounceVertical = YES;
+    self.collectionView.showsVerticalScrollIndicator = NO;
+    
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    
+    [self.collectionView registerClass:[FFAlbumCollectionViewCell class] forCellWithReuseIdentifier:kFFAlbumCollectionViewCellIdentifier];
+    
+    __weak typeof(self) weakSelf = self;
+    [[FFAlbum sharedAlbum]setupAlbumGroups:^(NSMutableArray *groups) {
+        [weakSelf.albumDataArray addObjectsFromArray: [weakSelf setupAlbumAssets:groups]];
+        [weakSelf.collectionView reloadData];
     }];
 }
 
+#pragma mark - UICollectionViewDataSource
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)sectio{
+    return self.albumDataArray.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    FFAlbumCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFFAlbumCollectionViewCellIdentifier forIndexPath:indexPath];
+    FFAlbumModel *model = self.albumDataArray[indexPath.row];
+    model.indexPath = indexPath;
+    cell.model = model;
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+
+}
+
+
+#pragma mark - 数据提取
+
+- (NSMutableArray *)setupAlbumAssets:(NSMutableArray *)groups{
+    NSMutableArray *allVideoAssets = @[].mutableCopy;
+    for (int i = 0; i< groups.count; i++) {
+        [allVideoAssets addObjectsFromArray: [self receiveAlbumAssets:groups[i]]];
+    }
+    return allVideoAssets;
+}
+
+- (NSMutableArray *)receiveAlbumAssets:(ALAssetsGroup *)group{
+    NSMutableArray *assets = @[].mutableCopy;
+    [group setAssetsFilter:[ALAssetsFilter allVideos]];
+    
+    ALAssetsGroupEnumerationResultsBlock resultBlock = ^(ALAsset *asset, NSUInteger index, BOOL *stop) {
+        if (asset) {
+            FFAlbumModel *model = [[FFAlbumModel alloc] initAlbumModel:asset];
+            NSString *assetType = [model.asset valueForProperty:ALAssetPropertyType];
+            if ([assetType isEqualToString:ALAssetTypeVideo]) {
+                [assets addObject:model];
+            }
+        }
+        
+    };
+    [group enumerateAssetsWithOptions:NSEnumerationReverse usingBlock:resultBlock];
+    
+    return assets;
+}
+
+#pragma mark - lazy init
+
+- (NSMutableArray *)albumDataArray{
+    if (!_albumDataArray) {
+        _albumDataArray = [[NSMutableArray alloc]init];
+    }
+    return _albumDataArray;
+}
+
+
+#pragma mark - ---
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

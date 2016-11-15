@@ -29,8 +29,7 @@
 #import "UIColor+Category.h"
 
 // ----------
-#import "LSYConfig.h"
-#import "LSYAlbum.h"
+#import "FFAlbum.h"
 
 
 // -----
