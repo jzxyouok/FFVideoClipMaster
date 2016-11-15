@@ -20,6 +20,12 @@
 
 @property (nonatomic, strong) NSMutableArray * albumDataArray;
 
+@property (nonatomic)int selectNumbers;
+@property (nonatomic,strong) NSMutableArray *assetsSort;
+
+@property (nonatomic) NSInteger maxminumNumber;
+
+
 @end
 
 @implementation FFVideoChooseViewController
@@ -33,6 +39,10 @@
 }
 
 -(void)setupViews{
+    
+    self.assetsSort = [NSMutableArray array];
+    self.maxminumNumber = 1;
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = kThumbnailSize;
     flowLayout.sectionInset = UIEdgeInsetsMake(5,5,5, 5);
@@ -77,9 +87,31 @@
 #pragma mark - UICollectionViewDelegate
 
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+#pragma mark -UICollectionViewDelegate
+-(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.maxminumNumber) {
+        if (!(self.maxminumNumber>collectionView.indexPathsForSelectedItems.count)) {
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"最多只能选%d个文件",(int)self.maxminumNumber] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alertView show];
+            return NO;
+        }
+        return YES;
+    }
+    else
+        return YES;
+}
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectNumbers = (int)collectionView.indexPathsForSelectedItems.count;
+    [self.assetsSort addObject:indexPath];
+}
 
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectNumbers = (int)collectionView.indexPathsForSelectedItems.count;
+    [self.assetsSort removeObject:indexPath];
 }
 
 

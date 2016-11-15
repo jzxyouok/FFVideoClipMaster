@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
 typedef void (^albumGroupsBlock)(NSMutableArray *groups);
 typedef void (^albumAssetsBlock)(NSMutableArray *assets);
+
 @interface FFAlbum : NSObject
+
 @property (nonatomic,strong) ALAssetsGroup *assetsGroup;
 @property (nonatomic,strong) ALAssetsLibrary *assetsLibrary;
 @property (nonatomic,strong) ALAssetsFilter *assstsFilter;

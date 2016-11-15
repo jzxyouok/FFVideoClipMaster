@@ -76,7 +76,6 @@
             }else{
                 [assets addObject:model];
             }
-            
         }
         
         if (albumAssets) {
