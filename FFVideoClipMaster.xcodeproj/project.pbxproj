@@ -29,6 +29,17 @@
 		50D513711DDB4BFF0099F77E /* FFAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D513701DDB4BFF0099F77E /* FFAlbum.m */; };
 		50D513731DDB4C3E0099F77E /* AlbumPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 50D513721DDB4C3E0099F77E /* AlbumPicker.bundle */; };
 		50D513761DDB53050099F77E /* NSMutableArray+FFAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D513751DDB53050099F77E /* NSMutableArray+FFAlbum.m */; };
+		50D513891DDB54B30099F77E /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D513791DDB54B30099F77E /* PlayerView.m */; };
+		50D5138A1DDB54B30099F77E /* backBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D5137B1DDB54B30099F77E /* backBtn.png */; };
+		50D5138B1DDB54B30099F77E /* maxBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D5137C1DDB54B30099F77E /* maxBtn.png */; };
+		50D5138C1DDB54B30099F77E /* minBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D5137D1DDB54B30099F77E /* minBtn.png */; };
+		50D5138D1DDB54B30099F77E /* pauseBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D5137E1DDB54B30099F77E /* pauseBtn.png */; };
+		50D5138E1DDB54B30099F77E /* playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D5137F1DDB54B30099F77E /* playBtn.png */; };
+		50D5138F1DDB54B30099F77E /* round.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D513801DDB54B30099F77E /* round.png */; };
+		50D513901DDB54B30099F77E /* Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D513821DDB54B30099F77E /* Slider.m */; };
+		50D513911DDB54B30099F77E /* UIImage+ScaleToSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D513841DDB54B30099F77E /* UIImage+ScaleToSize.m */; };
+		50D513921DDB54B30099F77E /* UIImage+TintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D513861DDB54B30099F77E /* UIImage+TintColor.m */; };
+		50D513931DDB54B30099F77E /* UIView+SetRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D513881DDB54B30099F77E /* UIView+SetRect.m */; };
 		922799095E86264DC3280DD5 /* libPods-FFVideoClipMaster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59C7CDDFE93716A60AC947B9 /* libPods-FFVideoClipMaster.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +100,22 @@
 		50D513721DDB4C3E0099F77E /* AlbumPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlbumPicker.bundle; sourceTree = "<group>"; };
 		50D513741DDB53050099F77E /* NSMutableArray+FFAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+FFAlbum.h"; sourceTree = "<group>"; };
 		50D513751DDB53050099F77E /* NSMutableArray+FFAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+FFAlbum.m"; sourceTree = "<group>"; };
+		50D513781DDB54B30099F77E /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
+		50D513791DDB54B30099F77E /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
+		50D5137B1DDB54B30099F77E /* backBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backBtn.png; sourceTree = "<group>"; };
+		50D5137C1DDB54B30099F77E /* maxBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maxBtn.png; sourceTree = "<group>"; };
+		50D5137D1DDB54B30099F77E /* minBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minBtn.png; sourceTree = "<group>"; };
+		50D5137E1DDB54B30099F77E /* pauseBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseBtn.png; sourceTree = "<group>"; };
+		50D5137F1DDB54B30099F77E /* playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtn.png; sourceTree = "<group>"; };
+		50D513801DDB54B30099F77E /* round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round.png; sourceTree = "<group>"; };
+		50D513811DDB54B30099F77E /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
+		50D513821DDB54B30099F77E /* Slider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slider.m; sourceTree = "<group>"; };
+		50D513831DDB54B30099F77E /* UIImage+ScaleToSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ScaleToSize.h"; sourceTree = "<group>"; };
+		50D513841DDB54B30099F77E /* UIImage+ScaleToSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ScaleToSize.m"; sourceTree = "<group>"; };
+		50D513851DDB54B30099F77E /* UIImage+TintColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TintColor.h"; sourceTree = "<group>"; };
+		50D513861DDB54B30099F77E /* UIImage+TintColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TintColor.m"; sourceTree = "<group>"; };
+		50D513871DDB54B30099F77E /* UIView+SetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetRect.h"; sourceTree = "<group>"; };
+		50D513881DDB54B30099F77E /* UIView+SetRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetRect.m"; sourceTree = "<group>"; };
 		59C7CDDFE93716A60AC947B9 /* libPods-FFVideoClipMaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FFVideoClipMaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79BE4BAD6078AA6087AF3983 /* Pods-FFVideoClipMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFVideoClipMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-FFVideoClipMaster/Pods-FFVideoClipMaster.release.xcconfig"; sourceTree = "<group>"; };
 		B5DAA6CE041EDAC1CAC34A5E /* Pods-FFVideoClipMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFVideoClipMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FFVideoClipMaster/Pods-FFVideoClipMaster.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,7 +221,7 @@
 		504D0AFF1DD8AB85001725AC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				508704801DD8B739002F8BEA /* PlayerView */,
+				50D513771DDB54B30099F77E /* Player */,
 				504D0B081DD8ABFC001725AC /* VideoChooseVC */,
 				504D0B091DD8ABFC001725AC /* VideoClipVC */,
 				504D0B0A1DD8ABFC001725AC /* VideoSaveVC */,
@@ -318,13 +345,6 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		508704801DD8B739002F8BEA /* PlayerView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PlayerView;
-			sourceTree = "<group>";
-		};
 		508704821DD8BA04002F8BEA /* CateGory */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +370,37 @@
 			children = (
 			);
 			path = AssetModel;
+			sourceTree = "<group>";
+		};
+		50D513771DDB54B30099F77E /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				50D513781DDB54B30099F77E /* PlayerView.h */,
+				50D513791DDB54B30099F77E /* PlayerView.m */,
+				50D5137A1DDB54B30099F77E /* Resources */,
+				50D513811DDB54B30099F77E /* Slider.h */,
+				50D513821DDB54B30099F77E /* Slider.m */,
+				50D513831DDB54B30099F77E /* UIImage+ScaleToSize.h */,
+				50D513841DDB54B30099F77E /* UIImage+ScaleToSize.m */,
+				50D513851DDB54B30099F77E /* UIImage+TintColor.h */,
+				50D513861DDB54B30099F77E /* UIImage+TintColor.m */,
+				50D513871DDB54B30099F77E /* UIView+SetRect.h */,
+				50D513881DDB54B30099F77E /* UIView+SetRect.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		50D5137A1DDB54B30099F77E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50D5137B1DDB54B30099F77E /* backBtn.png */,
+				50D5137C1DDB54B30099F77E /* maxBtn.png */,
+				50D5137D1DDB54B30099F77E /* minBtn.png */,
+				50D5137E1DDB54B30099F77E /* pauseBtn.png */,
+				50D5137F1DDB54B30099F77E /* playBtn.png */,
+				50D513801DDB54B30099F77E /* round.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E6B208CF5A114F9572598E2E /* Pods */ = {
@@ -472,14 +523,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D5138F1DDB54B30099F77E /* round.png in Resources */,
 				504D0B161DD8AC5F001725AC /* FFVideoClipViewController.xib in Resources */,
+				50D5138D1DDB54B30099F77E /* pauseBtn.png in Resources */,
+				50D5138E1DDB54B30099F77E /* playBtn.png in Resources */,
 				50D513731DDB4C3E0099F77E /* AlbumPicker.bundle in Resources */,
+				50D5138A1DDB54B30099F77E /* backBtn.png in Resources */,
 				50D513661DDB39FA0099F77E /* FFAlbumCollectionViewCell.xib in Resources */,
 				504D0B1B1DD8AC7D001725AC /* FFVideoSaveViewController.xib in Resources */,
+				50D5138B1DDB54B30099F77E /* maxBtn.png in Resources */,
 				504D0ADA1DD8AADB001725AC /* LaunchScreen.storyboard in Resources */,
 				504D0B111DD8AC4C001725AC /* FFVideoChooseViewController.xib in Resources */,
 				504D0AD71DD8AADB001725AC /* Assets.xcassets in Resources */,
 				504D0B201DD8AC97001725AC /* FFVideoSizeHandleViewController.xib in Resources */,
+				50D5138C1DDB54B30099F77E /* minBtn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,8 +610,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				504D0B1A1DD8AC7D001725AC /* FFVideoSaveViewController.m in Sources */,
+				50D513891DDB54B30099F77E /* PlayerView.m in Sources */,
+				50D513911DDB54B30099F77E /* UIImage+ScaleToSize.m in Sources */,
+				50D513921DDB54B30099F77E /* UIImage+TintColor.m in Sources */,
 				504D0B151DD8AC5F001725AC /* FFVideoClipViewController.m in Sources */,
 				504D0ACF1DD8AADB001725AC /* AppDelegate.m in Sources */,
+				50D513901DDB54B30099F77E /* Slider.m in Sources */,
+				50D513931DDB54B30099F77E /* UIView+SetRect.m in Sources */,
 				50D513691DDB3A1A0099F77E /* FFAlbumModel.m in Sources */,
 				50D513761DDB53050099F77E /* NSMutableArray+FFAlbum.m in Sources */,
 				508704881DD9AC53002F8BEA /* UIColor+Category.m in Sources */,

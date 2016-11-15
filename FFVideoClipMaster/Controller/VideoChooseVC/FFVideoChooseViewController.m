@@ -9,14 +9,18 @@
 #import "FFVideoChooseViewController.h"
 #import "NSMutableArray+FFAlbum.h"
 
+#import "PlayerView.h"
+#import "UIView+SetRect.h"
+
 #import "FFAlbumCollectionViewCell.h"
 
 #import "FFAlbum.h"
 
 @interface FFVideoChooseViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (strong, nonatomic) UIView *headView;
+@property (strong, nonatomic) UICollectionView *collectionView;
+@property (nonatomic, strong) PlayerView *playerView;
 @property (nonatomic, strong) NSURL * url;
 
 @property (nonatomic, strong) NSMutableArray * albumDataArray;
@@ -74,6 +78,10 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     self.selectNumbers = (int)collectionView.indexPathsForSelectedItems.count;
     [self.assetsSort addObject:indexPath];
+    FFAlbumModel *model = self.albumDataArray[indexPath.row];
+
+    self.playerView.url = model.asset.defaultRepresentation.url;
+    [self.playerView playVideo];
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -87,6 +95,10 @@
 -(void)setupViews{
     self.assetsSort = [NSMutableArray array];
     self.maxminumNumber = 1;
+    
+    [self.view addSubview:self.playerView];
+    
+    [self.view addSubview:self.collectionView];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = kThumbnailSize;
@@ -122,6 +134,59 @@
         _albumDataArray = [[NSMutableArray alloc]init];
     }
     return _albumDataArray;
+}
+
+- (PlayerView *)playerView{
+    if (!_playerView) {
+        
+        _playerView = [[PlayerView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, 300)];
+        //根据旋转自动支持全屏，默认支持
+        //    playerView.autoFullScreen = NO;
+        //重复播放，默认不播放
+        //    playerView.repeatPlay     = YES;
+        //如果播放器所在页面支持横屏，需要设置为Yes，不支持不需要设置(默认不支持)
+        //    playerView.isLandscape    = YES;
+        
+        //播放
+        
+        //返回按钮点击事件回调
+        [_playerView backButton:^(UIButton *button) {
+            NSLog(@"返回按钮被点击");
+        }];
+        
+        //播放完成回调
+        [_playerView endPlay:^{
+            NSLog(@"播放完成");
+        }];
+
+    }
+    return _playerView;
+}
+
+-(UICollectionView *)collectionView{
+    if (!_collectionView) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.itemSize = kThumbnailSize;
+        flowLayout.sectionInset = UIEdgeInsetsMake(5,5,5, 5);
+        flowLayout.minimumInteritemSpacing = 5;
+        flowLayout.minimumLineSpacing = 5;
+        
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 364,ScreenWidth, ViewSize(self.view).height - 364) collectionViewLayout:flowLayout];
+        _collectionView.allowsMultipleSelection = YES;
+
+        
+        [self.collectionView registerClass:[FFAlbumCollectionViewCell class] forCellWithReuseIdentifier:kFFAlbumCollectionViewCellIdentifier];
+        
+        _collectionView.delegate = self;
+        _collectionView.delegate = self;
+        
+        _collectionView.alwaysBounceVertical = YES;
+        
+        self.collectionView.showsVerticalScrollIndicator = NO;
+        
+        self.collectionView.showsHorizontalScrollIndicator = NO;
+    }
+    return _collectionView;
 }
 
 
