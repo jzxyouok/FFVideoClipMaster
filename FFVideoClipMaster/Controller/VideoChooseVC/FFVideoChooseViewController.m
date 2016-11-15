@@ -80,12 +80,19 @@
     [self.assetsSort addObject:indexPath];
     FFAlbumModel *model = self.albumDataArray[indexPath.row];
 
+    self.playerView.height = 300;
+    self.collectionView.y = 364;
+    
     self.playerView.url = model.asset.defaultRepresentation.url;
     [self.playerView playVideo];
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     self.selectNumbers = (int)collectionView.indexPathsForSelectedItems.count;
+    
+    self.playerView.height = 0;
+    self.collectionView.y = 64;
+    [self.playerView pausePlay];
     [self.assetsSort removeObject:indexPath];
 }
 
@@ -125,6 +132,8 @@
         [weakSelf.albumDataArray addObjectsFromArray: [groups setupAlbumAssets]];
         [weakSelf.collectionView reloadData];
     }];
+    
+    self.playerView.height = 0;
 }
 
 #pragma mark - lazy init
@@ -143,7 +152,7 @@
         //根据旋转自动支持全屏，默认支持
         //    playerView.autoFullScreen = NO;
         //重复播放，默认不播放
-        //    playerView.repeatPlay     = YES;
+        //_playerView.repeatPlay     = YES;
         //如果播放器所在页面支持横屏，需要设置为Yes，不支持不需要设置(默认不支持)
         //    playerView.isLandscape    = YES;
         
@@ -171,7 +180,7 @@
         flowLayout.minimumInteritemSpacing = 5;
         flowLayout.minimumLineSpacing = 5;
         
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.playerView.frame),ScreenWidth, ViewSize(self.view).height - 364) collectionViewLayout:flowLayout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64,ScreenWidth, ViewSize(self.view).height) collectionViewLayout:flowLayout];
         _collectionView.allowsMultipleSelection = YES;
 
         

@@ -98,9 +98,10 @@ typedef enum : NSUInteger {
         self.backgroundColor = [UIColor blackColor];
         
         //注册屏幕旋转通知
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientChange:)
-                                                     name:UIDeviceOrientationDidChangeNotification
-                                                   object:[UIDevice currentDevice]];
+      //  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientChange:)
+        //                                             name:UIDeviceOrientationDidChangeNotification
+          //                                         object:[UIDevice currentDevice]];
+        
         //APP运行状态通知，将要被挂起
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appwillResignActive:)
                                                      name:UIApplicationWillResignActiveNotification
@@ -162,6 +163,7 @@ typedef enum : NSUInteger {
     
     //顶部View条
     _topView                 = [[UIView alloc]init];
+    _topView.hidden = YES;
     _topView.frame           = CGRectMake(0, 0, _backView.width, ViewHeight);
     _topView.backgroundColor = [UIColor colorWithRed:0.00000f green:0.00000f blue:0.00000f alpha:0.50000f];
     [_backView addSubview:_topView];
