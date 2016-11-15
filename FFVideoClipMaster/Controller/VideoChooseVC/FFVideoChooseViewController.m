@@ -7,6 +7,7 @@
 //
 
 #import "FFVideoChooseViewController.h"
+#import "NSMutableArray+FFAlbum.h"
 
 #import "FFAlbumCollectionViewCell.h"
 
@@ -38,8 +39,52 @@
     
 }
 
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)sectio{
+    return self.albumDataArray.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    FFAlbumCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFFAlbumCollectionViewCellIdentifier forIndexPath:indexPath];
+    FFAlbumModel *model = self.albumDataArray[indexPath.row];
+    model.indexPath = indexPath;
+    cell.model = model;
+    return cell;
+}
+
+#pragma mark -UICollectionViewDelegate
+
+-(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.maxminumNumber) {
+        
+        if (!(self.maxminumNumber > collectionView.indexPathsForSelectedItems.count)) {
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"最多只能选%d个文件",(int)self.maxminumNumber] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alertView show];
+            return NO;
+        }
+        
+        return YES;
+    }
+    else
+        return YES;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    self.selectNumbers = (int)collectionView.indexPathsForSelectedItems.count;
+    [self.assetsSort addObject:indexPath];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    self.selectNumbers = (int)collectionView.indexPathsForSelectedItems.count;
+    [self.assetsSort removeObject:indexPath];
+}
+
+
+#pragma mark - init Views
+
 -(void)setupViews{
-    
     self.assetsSort = [NSMutableArray array];
     self.maxminumNumber = 1;
     
@@ -55,7 +100,7 @@
     self.collectionView.delegate = self;
     
     self.collectionView.dataSource = self;
-   
+    
     self.collectionView.alwaysBounceVertical = YES;
     self.collectionView.showsVerticalScrollIndicator = NO;
     
@@ -65,83 +110,9 @@
     
     __weak typeof(self) weakSelf = self;
     [[FFAlbum sharedAlbum]setupAlbumGroups:^(NSMutableArray *groups) {
-        [weakSelf.albumDataArray addObjectsFromArray: [weakSelf setupAlbumAssets:groups]];
+        [weakSelf.albumDataArray addObjectsFromArray: [groups setupAlbumAssets]];
         [weakSelf.collectionView reloadData];
     }];
-}
-
-#pragma mark - UICollectionViewDataSource
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)sectio{
-    return self.albumDataArray.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    FFAlbumCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFFAlbumCollectionViewCellIdentifier forIndexPath:indexPath];
-    FFAlbumModel *model = self.albumDataArray[indexPath.row];
-    model.indexPath = indexPath;
-    cell.model = model;
-    return cell;
-}
-
-#pragma mark - UICollectionViewDelegate
-
-
-#pragma mark -UICollectionViewDelegate
--(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.maxminumNumber) {
-        if (!(self.maxminumNumber>collectionView.indexPathsForSelectedItems.count)) {
-            
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"最多只能选%d个文件",(int)self.maxminumNumber] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
-            [alertView show];
-            return NO;
-        }
-        return YES;
-    }
-    else
-        return YES;
-}
-
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.selectNumbers = (int)collectionView.indexPathsForSelectedItems.count;
-    [self.assetsSort addObject:indexPath];
-}
-
--(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.selectNumbers = (int)collectionView.indexPathsForSelectedItems.count;
-    [self.assetsSort removeObject:indexPath];
-}
-
-
-#pragma mark - 数据提取
-
-- (NSMutableArray *)setupAlbumAssets:(NSMutableArray *)groups{
-    NSMutableArray *allVideoAssets = @[].mutableCopy;
-    for (int i = 0; i< groups.count; i++) {
-        [allVideoAssets addObjectsFromArray: [self receiveAlbumAssets:groups[i]]];
-    }
-    return allVideoAssets;
-}
-
-- (NSMutableArray *)receiveAlbumAssets:(ALAssetsGroup *)group{
-    NSMutableArray *assets = @[].mutableCopy;
-    [group setAssetsFilter:[ALAssetsFilter allVideos]];
-    
-    ALAssetsGroupEnumerationResultsBlock resultBlock = ^(ALAsset *asset, NSUInteger index, BOOL *stop) {
-        if (asset) {
-            FFAlbumModel *model = [[FFAlbumModel alloc] initAlbumModel:asset];
-            NSString *assetType = [model.asset valueForProperty:ALAssetPropertyType];
-            if ([assetType isEqualToString:ALAssetTypeVideo]) {
-                [assets addObject:model];
-            }
-        }
-        
-    };
-    [group enumerateAssetsWithOptions:NSEnumerationReverse usingBlock:resultBlock];
-    
-    return assets;
 }
 
 #pragma mark - lazy init

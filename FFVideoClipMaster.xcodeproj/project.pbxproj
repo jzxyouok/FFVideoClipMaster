@@ -28,6 +28,7 @@
 		50D513691DDB3A1A0099F77E /* FFAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D513681DDB3A1A0099F77E /* FFAlbumModel.m */; };
 		50D513711DDB4BFF0099F77E /* FFAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D513701DDB4BFF0099F77E /* FFAlbum.m */; };
 		50D513731DDB4C3E0099F77E /* AlbumPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 50D513721DDB4C3E0099F77E /* AlbumPicker.bundle */; };
+		50D513761DDB53050099F77E /* NSMutableArray+FFAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D513751DDB53050099F77E /* NSMutableArray+FFAlbum.m */; };
 		922799095E86264DC3280DD5 /* libPods-FFVideoClipMaster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59C7CDDFE93716A60AC947B9 /* libPods-FFVideoClipMaster.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,8 @@
 		50D5136F1DDB4BFF0099F77E /* FFAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAlbum.h; sourceTree = "<group>"; };
 		50D513701DDB4BFF0099F77E /* FFAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAlbum.m; sourceTree = "<group>"; };
 		50D513721DDB4C3E0099F77E /* AlbumPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlbumPicker.bundle; sourceTree = "<group>"; };
+		50D513741DDB53050099F77E /* NSMutableArray+FFAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+FFAlbum.h"; sourceTree = "<group>"; };
+		50D513751DDB53050099F77E /* NSMutableArray+FFAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+FFAlbum.m"; sourceTree = "<group>"; };
 		59C7CDDFE93716A60AC947B9 /* libPods-FFVideoClipMaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FFVideoClipMaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79BE4BAD6078AA6087AF3983 /* Pods-FFVideoClipMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFVideoClipMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-FFVideoClipMaster/Pods-FFVideoClipMaster.release.xcconfig"; sourceTree = "<group>"; };
 		B5DAA6CE041EDAC1CAC34A5E /* Pods-FFVideoClipMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFVideoClipMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FFVideoClipMaster/Pods-FFVideoClipMaster.debug.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 			children = (
 				508704861DD9AC53002F8BEA /* UIColor+Category.h */,
 				508704871DD9AC53002F8BEA /* UIColor+Category.m */,
+				50D513741DDB53050099F77E /* NSMutableArray+FFAlbum.h */,
+				50D513751DDB53050099F77E /* NSMutableArray+FFAlbum.m */,
 			);
 			path = CateGory;
 			sourceTree = "<group>";
@@ -551,6 +556,7 @@
 				504D0B151DD8AC5F001725AC /* FFVideoClipViewController.m in Sources */,
 				504D0ACF1DD8AADB001725AC /* AppDelegate.m in Sources */,
 				50D513691DDB3A1A0099F77E /* FFAlbumModel.m in Sources */,
+				50D513761DDB53050099F77E /* NSMutableArray+FFAlbum.m in Sources */,
 				508704881DD9AC53002F8BEA /* UIColor+Category.m in Sources */,
 				50D513711DDB4BFF0099F77E /* FFAlbum.m in Sources */,
 				504D0ACC1DD8AADB001725AC /* main.m in Sources */,
