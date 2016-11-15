@@ -183,8 +183,6 @@ typedef enum : NSUInteger {
     [self createSlider];
     //创建时间Label
     [self createCurrentTimeLabel];
-    //创建返回按钮
-    [self createBackButton];
     //创建全屏按钮
     [self createMaxButton];
     //创建点击手势
@@ -431,19 +429,8 @@ typedef enum : NSUInteger {
         [self playVideo];
     }
 }
-#pragma mark - 返回按钮方法
-- (void)createBackButton
-{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame     = CGRectMake(0 , 0, ButtonSize, ButtonSize);
-    button.centerY   = _topView.centerY;
-    [button setBackgroundImage:[[UIImage imageNamed:@"backBtn"] imageWithTintColor:[UIColor whiteColor]] forState:UIControlStateNormal];
-    [_topView addSubview:button];
-    
-    [button addTarget:self
-               action:@selector(backButtonAction:)
-     forControlEvents:UIControlEventTouchUpInside];
-}
+
+
 #pragma mark - 全屏按钮
 - (void)createMaxButton
 {
@@ -530,18 +517,15 @@ typedef enum : NSUInteger {
     {
         [self resetPlay];
     }
-    
+    [_player seekToTime:CMTimeMake(0, 1)];
+
     self.EndBlock();
 }
 - (void)endPlay:(EndBolck) end
 {
     self.EndBlock = end;
 }
-#pragma mark - 返回按钮
-- (void)backButtonAction:(UIButton *)button
-{
-    self.BackBlock(button);
-}
+
 - (void)backButton:(BackButtonBlock) backButton;
 {
     self.BackBlock = backButton;
@@ -635,6 +619,7 @@ typedef enum : NSUInteger {
 #pragma mark - 原始大小
 - (void)originalscreen
 {
+
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
     
     _isFullScreen = NO;

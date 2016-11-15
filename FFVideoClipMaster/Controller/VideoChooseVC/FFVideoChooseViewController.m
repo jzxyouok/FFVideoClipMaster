@@ -171,7 +171,7 @@
         flowLayout.minimumInteritemSpacing = 5;
         flowLayout.minimumLineSpacing = 5;
         
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 364,ScreenWidth, ViewSize(self.view).height - 364) collectionViewLayout:flowLayout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.playerView.frame),ScreenWidth, ViewSize(self.view).height - 364) collectionViewLayout:flowLayout];
         _collectionView.allowsMultipleSelection = YES;
 
         
