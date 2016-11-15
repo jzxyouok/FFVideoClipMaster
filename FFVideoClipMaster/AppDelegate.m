@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
     self.window.backgroundColor = [UIColor clearColor];
     FFVideoChooseViewController *chooseVC = [[FFVideoChooseViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:chooseVC];
