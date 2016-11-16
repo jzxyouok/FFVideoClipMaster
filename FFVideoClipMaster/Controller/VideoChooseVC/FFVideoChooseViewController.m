@@ -9,6 +9,9 @@
 #import "FFVideoChooseViewController.h"
 #import "NSMutableArray+FFAlbum.h"
 
+#import "PlayerView.h"
+#import "UIView+SetRect.h"
+
 #import "FFAlbumCollectionViewCell.h"
 
 #import "FFAlbum.h"
@@ -17,7 +20,7 @@
 
 @property (strong, nonatomic) UIView *headView;
 @property (strong, nonatomic) UICollectionView *collectionView;
-
+@property (nonatomic, strong) PlayerView *playerView;
 @property (nonatomic, strong) NSURL * url;
 
 @property (nonatomic, strong) NSMutableArray * albumDataArray;
@@ -77,13 +80,19 @@
     [self.assetsSort addObject:indexPath];
     FFAlbumModel *model = self.albumDataArray[indexPath.row];
 
+    self.playerView.height = 300;
+    self.collectionView.y = 364;
     
+    self.playerView.url = model.asset.defaultRepresentation.url;
+    [self.playerView playVideo];
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     self.selectNumbers = (int)collectionView.indexPathsForSelectedItems.count;
     
-
+    self.playerView.height = 0;
+    self.collectionView.y = 64;
+    [self.playerView pausePlay];
     [self.assetsSort removeObject:indexPath];
 }
 
@@ -94,6 +103,7 @@
     self.assetsSort = [NSMutableArray array];
     self.maxminumNumber = 1;
     
+    [self.view addSubview:self.playerView];
     
     [self.view addSubview:self.collectionView];
     
@@ -123,6 +133,7 @@
         [weakSelf.collectionView reloadData];
     }];
     
+    self.playerView.height = 0;
 }
 
 #pragma mark - lazy init
@@ -134,6 +145,32 @@
     return _albumDataArray;
 }
 
+- (PlayerView *)playerView{
+    if (!_playerView) {
+        
+        _playerView = [[PlayerView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, 300)];
+        //根据旋转自动支持全屏，默认支持
+        //    playerView.autoFullScreen = NO;
+        //重复播放，默认不播放
+        //_playerView.repeatPlay     = YES;
+        //如果播放器所在页面支持横屏，需要设置为Yes，不支持不需要设置(默认不支持)
+        //    playerView.isLandscape    = YES;
+        
+        //播放
+        
+        //返回按钮点击事件回调
+        [_playerView backButton:^(UIButton *button) {
+            NSLog(@"返回按钮被点击");
+        }];
+        
+        //播放完成回调
+        [_playerView endPlay:^{
+            NSLog(@"播放完成");
+        }];
+
+    }
+    return _playerView;
+}
 
 -(UICollectionView *)collectionView{
     if (!_collectionView) {
@@ -143,7 +180,7 @@
         flowLayout.minimumInteritemSpacing = 5;
         flowLayout.minimumLineSpacing = 5;
         
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, ViewSize(self.view).width, ViewSize(self.view).height) collectionViewLayout:flowLayout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64,ScreenWidth, ViewSize(self.view).height) collectionViewLayout:flowLayout];
         _collectionView.allowsMultipleSelection = YES;
 
         
